@@ -1,3 +1,16 @@
 .main-container {
  
 }
+
+.meme-form {
+ width: 90%;
+ margin: 20px auto;
+ display: flex;
+ justify-content: space-between;
+}
+
+.meme-form > input {
+ width: 45%;
+ height: 35px;
+ margin: 1em;
+}

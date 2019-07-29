@@ -2,8 +2,8 @@ import React from 'react';
 
 import './footerstyle.css';
 
-const Footer = () => <footer>
-  hello Footer
-</footer>
+const Footer = () => <div className="footer-container">
+ <p>Mabe - Nelson - Gustavo - Franco</p>
+</div>
 
 export default Footer;
