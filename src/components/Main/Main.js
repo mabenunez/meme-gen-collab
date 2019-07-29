@@ -14,17 +14,18 @@ class Main extends Component {
   };
 
   this.handleClick = this.handleClick.bind(this);
+  this.handleChange = this.handleChange.bind(this);
  }
 
- handleChange(evet) {
-  const { name, value } = this.state;
+ handleChange(event) {
+  const { name, value } = event.target;
   this.setState({
    [name]: value
   })
  }
 
  handleClick(e) {
-  e.preventDefault()
+  e.preventDefault();
  }
 
  componentDidMount() {
@@ -54,6 +55,9 @@ class Main extends Component {
         />
         <button onClick={this.handleClick}>Generate</button>
       </form>
+
+      <h2>{topText}</h2>
+      <h2>{botText}</h2>
     </main>
    )
   }
