@@ -9,6 +9,7 @@ header {
 
 header > img {
  height: 80%;
+ cursor: pointer;
 }
 
 header > p {
@@ -17,7 +18,4 @@ header > p {
  margin-left: 30px;
 }
 
-#nav {
-
-}
 
