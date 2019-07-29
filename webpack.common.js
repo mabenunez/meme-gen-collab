@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -19,7 +18,7 @@ module.exports = {
     exclude: /node_modules/,
     use: {
      loader: 'babel-loader',
-    }
+    },
    },
    {
     test: /\.(css|scss)$/,
@@ -27,11 +26,11 @@ module.exports = {
     {
      loader: MiniCssExtractPlugin.loader,
      options: {
-      publicPath: '../'
+      publicPath: '../',
      },
     },
-    'css-loader'
-    ]
+    'css-loader',
+    ],
    },
    {
     test: /\.html$/,
@@ -39,12 +38,12 @@ module.exports = {
      loader: 'html-loader',
      options: {
       minimize: true
-     }
-    }
-   }
-  ]
+     },
+    },
+   },
+  ],
  },
- plugin: [
+ plugins: [
   new HtmlWebpackPlugin({
    filename: 'js/index.html',
    template: './public/index.html'
@@ -53,6 +52,5 @@ module.exports = {
    filename: 'css/[name].bundle.css',
    chunkFilename: '[id].bundle.css'
   }),
-  new webpack.HotModuleReplacementPlugin()
  ]
 }
