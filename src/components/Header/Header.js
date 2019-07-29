@@ -3,16 +3,8 @@ import React from 'react'
 const Header = () => {
  return (
   <header>
-   <div>
-    <img src="" alt="Logo"/>
-   </div>
-   <div id="nav">
-    <ul>
-     <li>Dashboard</li>
-     <li>My Memes</li>
-     <li>Generator</li>
-    </ul>
-   </div>
+     <img src="http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png" alt=""/>
+     <p>Meme Generator?</p>
   </header>
  )
 }
