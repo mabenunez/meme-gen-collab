@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 // Global App Style
 import './App.css';
 
@@ -22,7 +23,7 @@ class App extends Component {
    <div className="app-container">
     <Header />
     <Main />
-
+    <Footer />
    </div>
    )
  }
