@@ -26,3 +26,37 @@
  border: 1px solid darkblue;
  border-radius: 10px;
 }
+
+.meme-form > button:hover {
+ background: darkblue;
+ color: white;
+ transition: 1s;
+}
+
+.meme {
+ position: relative;
+ width: 60%;
+ margin: auto;
+}
+.meme > img {
+ max-width: 100%;
+ max-height: 40%;
+}
+.meme > h2 {
+ position: absolute;
+ width: 80%;
+ text-align: center;
+ left: 50%;
+ transform: translateX(-50%);
+ margin: 15px 0;
+ color: blue;
+ letter-spacing: 1px;
+}
+
+.meme .top {
+ top: 0;
+}
+
+.meme .bot {
+ bottom: 0;
+}

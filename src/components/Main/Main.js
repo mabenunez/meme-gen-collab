@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-// Own Style Sheet
 import './mainstyle.css';
+
+import { getImg } from '../../utils/api.js';
+
 
 class Main extends Component {
  constructor() {
-  super();
+  super()
   this.state = {
    topText: '',
    botText: '',
@@ -16,26 +18,34 @@ class Main extends Component {
   this.handleClick = this.handleClick.bind(this);
   this.handleChange = this.handleChange.bind(this);
  }
-
- handleChange(event) {
-  const { name, value } = event.target;
+ componentDidMount() {
+  getImg().then( data => {
+   this.setState({
+     allMemeImgs: data.data.memes
+   });
+    console.log(this.state.allMemeImgs)
+  })
+ }
+ handleChange(e) {
+  const { name, value } = e.target;
   this.setState({
    [name]: value
   })
  }
-
  handleClick(e) {
   e.preventDefault();
+  const { allMemeImgs } = this.state;
+  const randNum = Math.floor(Math.random() * allMemeImgs.length );
+  const randMemeImg = allMemeImgs[randNum].url;
+  console.log(randMemeImg)
+  this.setState({
+    randomImg: randMemeImg
+  })
  }
-
- componentDidMount() {
-
- }
-
  render() {
-  const { topText, botText } = this.state;
+  const { topText, botText, randomImg } = this.state;
   return (
-    <main className="main-container">
+    <div>
       <form className="meme-form">
        <label htmlFor="input">Top text:</label>
         <input
@@ -55,10 +65,12 @@ class Main extends Component {
         />
         <button onClick={this.handleClick}>Generate</button>
       </form>
-
-      <h2>{topText}</h2>
-      <h2>{botText}</h2>
-    </main>
+      <div className="meme">
+       <img src={randomImg} alt=""/>
+       <h2 className="top">{topText}</h2>
+       <h2 className="bot">{botText}</h2>
+      </div>
+    </div>
    )
   }
  }
